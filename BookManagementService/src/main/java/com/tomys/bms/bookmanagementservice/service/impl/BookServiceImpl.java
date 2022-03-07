@@ -12,13 +12,18 @@ public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository;
 
-    
     public BookServiceImpl(BookRepository bookRepository) {
+        super();
         this.bookRepository = bookRepository;
     }
 
     @Override
     public List<Book> getBooks() {
         return this.bookRepository.findAll();
+    }
+
+    @Override
+    public Book saveBook(Book book) {
+        return bookRepository.save(book);
     }
 }
