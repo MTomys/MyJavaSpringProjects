@@ -52,4 +52,24 @@ public class Book {
     public String getAuthorName() {
         return authorName;
     }
+
+    public void setBookName(String bookName) {
+        System.out.println("Set book name called");
+        this.bookName = bookName;
+    }
+
+    public void setIsbn10(Long isbn10) {
+        System.out.println("Set ISBN called");
+        this.isbn10 = isbn10;
+    }
+
+    public void setIsbn13(Long isbn13) {
+        System.out.println("Set ISBN13 called");
+        this.isbn13 = isbn13;
+    }
+
+    public void setAuthorName(String authorName) {
+        System.out.println("Set author name called");
+        this.authorName = authorName;
+    }
 }
