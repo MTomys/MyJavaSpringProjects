@@ -2,7 +2,6 @@ package com.tomys.bms.bookmanagementservice.entity;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "books")
 public class Book {

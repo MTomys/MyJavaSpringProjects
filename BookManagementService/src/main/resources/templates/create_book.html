@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Books Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col--lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text-center">Add a new book</h1>
+                <div class="card-body">
+                    <form th:action="@{/books}" th:object = "${book}" method="POST">
+                        <div class="form-group">
+                            <label>Book Name: </label>
+                            <input
+                            type="text"
+                            name="bookName"
+                            th:field="bookName"
+                            class="form-control"
+                            placeholder="Enter the book's name"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>Author Name: </label>
+                            <input
+                            type="text"
+                            name="authorName"
+                            th:field="authorName"
+                            class="form-control"
+                            placeholder="Enter the book author's name"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>ISBN 10: </label>
+                            <input
+                            type="number"
+                            name="isbn10"
+                            th:field="isbn10"
+                            class="form-control"
+                            placeholder="Enter the book's ISBN 10 Number"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>ISBN 13: </label>
+                            <input
+                            type="number"
+                            name="isbn13"
+                            th:field="isbn13"
+                            class="form-control"
+                            placeholder="Enter the book's ISBN 13 Number"
+                            />
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
