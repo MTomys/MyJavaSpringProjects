@@ -49,6 +49,10 @@
                 <td th:text="${book.authorName}"></td>
                 <td th:text="${book.isbn10}"></td>
                 <td th:text="${book.isbn13}"></td>
+                <td>
+                    <a th:href="@{/books/edit/{id}(id=${book.id})}"
+                    class="btn btn-primary">Update</a>
+                </td>
             </tr>
             </tbody>
         </table>

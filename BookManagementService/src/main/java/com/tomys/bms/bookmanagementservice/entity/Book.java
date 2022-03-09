@@ -49,6 +49,10 @@ public class Book {
         return isbn13;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getAuthorName() {
         return authorName;
     }

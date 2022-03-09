@@ -16,7 +16,6 @@ public class BookServiceImpl implements BookService {
         super();
         this.bookRepository = bookRepository;
     }
-
     @Override
     public List<Book> getBooks() {
         return this.bookRepository.findAll();
@@ -26,4 +25,15 @@ public class BookServiceImpl implements BookService {
     public Book saveBook(Book book) {
         return bookRepository.save(book);
     }
+
+    @Override
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
+    }
+
+    @Override
+    public Book getBookById(Long id) {
+        return bookRepository.findById(id).get();
+    }
+
 }
