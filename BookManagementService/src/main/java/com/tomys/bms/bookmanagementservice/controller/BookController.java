@@ -34,19 +34,6 @@ public class BookController {
 
     @PostMapping("/books")
     public String saveBook(@ModelAttribute("book") Book book) {
-        if (book.getBookName() == null) {
-            System.out.println("bookName null");
-        }
-        if (book.getAuthorName() == null) {
-            System.out.println("Author Name null");
-        }
-        if (book.getIsbn10() == null) {
-            System.out.println("isbn 10 null");
-        }
-        if (book.getIsbn13() == null) {
-            System.out.println("isbn 13 null");
-        }
-
         this.bookService.saveBook(book);
         return "redirect:/books";
     }
