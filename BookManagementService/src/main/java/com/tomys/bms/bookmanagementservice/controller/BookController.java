@@ -3,10 +3,7 @@ import com.tomys.bms.bookmanagementservice.entity.Book;
 import com.tomys.bms.bookmanagementservice.service.BookService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -45,7 +42,7 @@ public class BookController {
     }
 
     @PostMapping("/books/{id}")
-    public String updateBook(@PathVariable Long id ,@ModelAttribute("book") Book book, Model model) {
+    public String updateBook(@PathVariable Long id, @ModelAttribute("book") Book book) {
         Book currentBook = bookService.getBookById(id);
         currentBook.setId(id);
         currentBook.setBookName(book.getBookName());
@@ -55,4 +52,12 @@ public class BookController {
         bookService.updateBook(currentBook);
         return "redirect:/books";
     }
+
+    @GetMapping("/books/{id}")
+    public String deleteBook(@PathVariable Long id) {
+        bookService.deleteBookById(id);
+        return "redirect:/books";
+    }
+
+
 }
